@@ -27,7 +27,6 @@ const reducer = ( state = initState , action ) => {
                     flag : res.countryInfo.flag,
                     recovered : res.recovered, 
                     deaths : res.deaths
-
                 })),
                
             }
