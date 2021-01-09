@@ -18,27 +18,29 @@ export default function Covid19() {
     //state is a how to write a variable in react
     const dispatch = useDispatch()
     const [country , setCountry] = useState('worldwide')
-    const [mapCenter , setMapCenter]= useState({lat : 34.80746 , lng:-40.4796})
+    const [mapCenter , setMapCenter]= useState({lat : 20 , lng:77})
     //center of the pacific ocean
     const [mapZoom , setMapZoom] = useState(3)
     let countries = useSelector(state => state.countriesArray)
     let allData = useSelector(state => state.allCountriesData)
     let specificData = useSelector(state => state.specificData)
+
     const onCountryChange = async ( event ) => {
         const countryCode = event.target.value
         setCountry( countryCode)
         if(countryCode === 'worldwide'){
             dispatch(getCountryAllData())
-            setMapCenter([countries.lat,countries.long])
-            setMapZoom(10)
+            setMapCenter({lat : 20 , lng:77})
+            setMapZoom(1)
         }
         else{
             dispatch(getCountryData(countryCode))
-            setMapCenter([countries.lat,countries.long])
-            setMapZoom(10)
+            const index = countries.findIndex((res) => res.value === event.target.value)
+         
+            setMapCenter({lat : countries[index].lat, lng : countries[index].long})
+            setMapZoom(1)
         }
     }
-
     useEffect(() => {
         dispatch(getCountryApiCall())
     }, [])
@@ -71,7 +73,7 @@ export default function Covid19() {
                     </div>
                 </div>
                 <div>
-                    <Map center={mapCenter} zoom={mapZoom} countries = {countries}/>
+                    <Map center = {mapCenter} zoom={mapZoom} countries = {countries}/>
                 </div>
             </div>
             <Card className={styles.appRight}>

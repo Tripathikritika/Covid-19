@@ -14,7 +14,7 @@ function InfoBox({title , cases,total}) {
                 <Typography className="infoBoxTotal" color = "textSecondary">
                     {total} Total
                 </Typography>
-            </CardContent>
+            </CardContent>  
         </Card>
     )
 }

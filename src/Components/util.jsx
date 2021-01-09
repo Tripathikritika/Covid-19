@@ -43,32 +43,32 @@ export const showDataOnMap = (data,casesType='cases') => (
     
     data.map(country => (
         <Circle 
-            key ={country.name}
+            key = {country.name}
             center={[country.lat , country.long]}
-            fillOpacity = {0.4}
+            fillOpacity = {0.5}
             color = {casesTypeColors[casesType.hex]}
             fillColor = {casesTypeColors[casesType].hex}
             radius = {
                 Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
             }
         >
-            {/* <Popup>
+            <Popup>
               <div className={styles.infoContainer}>
-                    <div className={styles.infoFlag}>
-                        style={{ backgroundImage: `url(${country.flag})` }}
-                    </div>
+                    <div className={styles.infoFlag} style={{backgroundImage : `url:${country.flag}`}}></div>
                     <div className={styles.infoName}>
                         {country.name}
                     </div>
-                    <div className={styles.inforConfirmed}>
-                        Cases: {numeral(country.cases).format("0,0")}                    </div>
-                    <div className={styles.inforRecovered}>
-                        Recovered: {numeral(country.recovered).format("0,0")}                    </div>
+                    <div className={styles.infoConfirmed}>
+                        Cases: {numeral(country.cases).format("0,0")}                    
+                    </div>
+                    <div className={styles.infoRecovered}>
+                        Recovered: {numeral(country.recovered).format("0,0")}                    
+                    </div>
                     <div className={styles.infoDeaths}>
                         Deaths: {numeral(country.deaths).format("0,0")}
                     </div>
               </div>
-            </Popup> */}
+            </Popup>
         </Circle>
     ))
 )
