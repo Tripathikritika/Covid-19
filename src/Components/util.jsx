@@ -7,20 +7,14 @@ import styles from '../Styling/utils.module.css'
 const casesTypeColors = {
     cases: {
       hex: "#CC1034",
-      rgb: "rgb(204, 16, 52)",
-      half_op: "rgba(204, 16, 52, 0.5)",
       multiplier: 200,
     },
     recovered: {
-      hex: "#7dd71d",
-      rgb: "rgb(125, 215, 29)",
-      half_op: "rgba(125, 215, 29, 0.5)",
-      multiplier: 900,
+        hex: "#7DD71D",
+        multiplier: 500,
     },
     deaths: {
-      hex: "#fb4443",
-      rgb: "rgb(251, 68, 67)",
-      half_op: "rgba(251, 68, 67, 0.5)",
+      hex: "#FB4443",
       multiplier: 2000,
     },
 };
@@ -38,6 +32,10 @@ export const sortData = (data) => {
     return sortedData
 }
 
+// default values
+export const prettyPrintStat = (stat) => 
+    stat ? `+${numeral(stat).format("0.0a")}` : `+0`
+
 //Draw circles on map with interactive tooltip
 export const showDataOnMap = (data,casesType='cases') => (
     
@@ -45,16 +43,16 @@ export const showDataOnMap = (data,casesType='cases') => (
         <Circle 
             key = {country.name}
             center={[country.lat , country.long]}
-            fillOpacity = {0.5}
-            color = {casesTypeColors[casesType.hex]}
-            fillColor = {casesTypeColors[casesType].hex}
-            radius = {
-                Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
+            color={casesTypeColors[casesType].hex}
+            fillColor={casesTypeColors[casesType].hex}
+            fillOpacity={0.4}
+            radius={
+              Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
             }
         >
             <Popup>
               <div className={styles.infoContainer}>
-                    <div className={styles.infoFlag} style={{backgroundImage : `url:${country.flag}`}}></div>
+                    <div className={styles.infoFlag} style={{backgroundImage : `url(${country.flag})`}}></div>
                     <div className={styles.infoName}>
                         {country.name}
                     </div>

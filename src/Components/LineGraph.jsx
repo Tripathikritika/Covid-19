@@ -1,5 +1,5 @@
 import React from 'react'
-import {useEffect } from 'react'
+import {useEffect ,useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import { useDispatch, useSelector } from 'react-redux'
 import { getHistoricalData } from '../Redux/action'
@@ -50,9 +50,10 @@ const options = {
     },
   };
 
-function LineGraph({casesTypes = "cases"}) {
-   
+function LineGraph({casesTypes = "cases" }) {
+
     let data = useSelector((state) => state.pastData)
+    
     const dispatch = useDispatch()
 
     const buildChartData = (data ,casesType ) => {// be default it will take cases
@@ -74,8 +75,9 @@ function LineGraph({casesTypes = "cases"}) {
 
     useEffect(() => {
         dispatch(getHistoricalData())
+        
     }, [casesTypes])
-    let chartData = buildChartData(data, "cases");
+    let chartData = buildChartData(data, casesTypes);
     return (
         <div>
             {chartData && chartData.length > 0 && (
