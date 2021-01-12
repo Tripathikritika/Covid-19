@@ -6,6 +6,13 @@ body {
   justify-content: space-evenly;
   padding: 20px;
 }
+.titleHeader {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+.appDropdown {
+  background-color: white;
+}
 .app_header {
   display: flex;
   align-items: center;
@@ -16,6 +23,14 @@ body {
 .appleft {
   flex: 0.8;
 }
+.appRight {
+  display: flex;
+  flex-direction: column;
+}
+.appHeader {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .slecteButton {
   width: 200px;
   color: black;
@@ -23,12 +38,10 @@ body {
   padding: 10px;
   box-shadow: none;
 }
-
 .appStats {
   display: flex;
   justify-content: space-between;
 }
-
 @media (max-width: 990px) {
   .app {
     flex-direction: column;

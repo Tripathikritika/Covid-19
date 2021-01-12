@@ -1,12 +1,26 @@
 .infoContainer {
+  width: 150px;
 }
 .infoFlag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
 }
 .infoName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
 }
-.inforConfirmed {
+.infoConfirmed {
+  font-size: 16px;
+  margin-top: 5px;
 }
-.inforRecovered {
+.infoRecovered {
+  font-size: 16px;
+  margin-top: 5px;
 }
 .infoDeaths {
+  font-size: 16px;
+  margin-top: 5px;
 }
