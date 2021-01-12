@@ -1,6 +1,6 @@
 # Covid-19 Tracker
 
-> It is a project which trackers the total number of coronavirus cases, total recovered cases and total death cases. It gives the output based on per country or be default worlwide cases. It shows the map which has popup functionality which describes about the country cases & countries flag when click on one particular country on the map.It also has a list of all countries with total number of cases overall followed by a grap which changes statistically.
+> It is a project which tracks the total number of coronavirus cases, total recovered cases and total death cases. It gives the output based on per country or by default worldwide cases. It shows the map which has popup functionality which describes about the country cases & countries flag when clicked on one particular country on the map.It also has a list of all countries with total number of cases overall followed by a graph which changes statistically.
 
 ## Tech/framework
 
@@ -19,26 +19,28 @@
 
 <br/>
 
-
 ## Features
 
 - [x] Map integration
-- [x] Chart Integration 
+- [x] Chart Integration
 
 ## Screenshots
 
-<img src="" alt="Landing Page" />
+<img src="public/LandingPage.png" alt="Landing Page" />
 
 ## Installation
+
 > - Clone the repo
 
->   `https://github.com/Tripathikritika/Covid-19.git`
+> `https://github.com/Tripathikritika/Covid-19.git`
+>
 > - Install NPM packages
 
->   `npm install`
+> `npm install`
+>
 > - Let the project start
 
->   `npm start`
+> `npm start`
 
 ## Credits
 
