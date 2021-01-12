@@ -1,4 +1,4 @@
-# Covid-19 Tracker
+# TRACK VIRUS
 
 > It is a project which tracks the total number of coronavirus cases, total recovered cases and total death cases. It gives the output based on per country or by default worldwide cases. It shows the map which has popup functionality which describes about the country cases & countries flag when clicked on one particular country on the map.It also has a list of all countries with total number of cases overall followed by a graph which changes statistically.
 
